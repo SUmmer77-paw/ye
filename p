@@ -2,10 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you like me?</title>
+    <style>
+        #response {
+            display: none; /* 初始状态隐藏 */
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showResponse(event) {
+            event.preventDefault(); // 阻止表单默认跳转行为
+            document.getElementById("form-container").style.display = "none"; // 隐藏表单
+            document.getElementById("response").style.display = "block"; // 显示回复内容
+        }
+    </script>
 </head>
 <body>
-    <h1>I LIKE U TOO!</h1>
+    <div id="form-container">
+        <h1>DO YOU LIKE ME?</h1>
+        <hr>
+        <form onsubmit="showResponse(event)">
+            <label>U'r? </label>
+            <input type="text" placeholder="U'r name" required>
+            <br><br>
+            <label>DO YOU LIKE ME?</label>
+            <br>
+            <img src="do_u_like_me.jpg" alt="Do you like me?" width="300">
+            <br><br>
+            <input type="radio" name="answer" value="yes" required> YES!
+            <input type="radio" name="answer" value="yes"> YES!
+            <br><br>
+            <input type="submit" value="SURE!">
+        </form>
+    </div>
+
+    <div id="response">
+        <h1>I LIKE U TOO!</h1>
+    </div>
 </body>
 </html>
